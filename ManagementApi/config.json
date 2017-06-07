@@ -1,0 +1,30 @@
+{
+  "DbConfiguration": {
+    "Uri": "",
+    "Key": "",
+    "DatabaseName": "",
+    "CollectionName": ""
+  },
+  "AzureAd": {
+    //id van de applicatie die je hebt toegevoegd aan Azure ad en die token gebruikt
+    "ClientId": "",
+    //Naam van uw Azure Ad
+    "TenantId": "",
+    "Tenant": "",
+    "AadInstance": "",
+    //Voor wie is de token bedoelt
+    "Audience": ""
+  },
+  "TwitterConfiguration": {
+
+    "ConsumerKey": "",
+    "ConsumerSecret": ""
+  },
+  "CognitiveServiceConfiguration": {
+    "Subkey": "",
+    "PersonGroup": "",
+    "Uri":  ""
+
+  }
+
+}

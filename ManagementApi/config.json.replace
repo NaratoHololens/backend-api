@@ -1,0 +1,8 @@
+﻿{
+  "DbConfiguration": {
+    "Uri": "https://narato-kdg-stage.documents.azure.com:443/",
+    "Key": "tyScVVojwmdcFetA3PpwHxG7tusqdLIxL7dpfeR0Rp7wH1YFilIs6oejLzMUClcIGnOMgWasVB83khlzaRlmhA==",
+    "DatabaseName": "DB-narato-kdg-stage-DEV",
+    "CollectionName": "C-narato-kdg-stage-DEV"
+  }
+}
