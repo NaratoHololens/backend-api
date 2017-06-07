@@ -65,9 +65,9 @@ namespace ManagementApi
                 });
 
                 //Set the comments path for the swagger json and ui.
-             //   var basePath = PlatformServices.Default.Application.ApplicationBasePath;
-              //  var xmlPath = Path.Combine(basePath, "ManagementApi.xml");
-              //  c.IncludeXmlComments(xmlPath);
+                var basePath = PlatformServices.Default.Application.ApplicationBasePath;
+                 var xmlPath = Path.Combine(basePath, "ManagementApi.xml");
+               c.IncludeXmlComments(xmlPath);
             });
 
             // DI

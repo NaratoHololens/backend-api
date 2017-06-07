@@ -5,11 +5,17 @@
     <ApplicationInsightsResourceId>/subscriptions/20303730-a123-44cb-9c84-ffe48d61a325/resourcegroups/RG-narato-kdg-stage-DEV/providers/microsoft.insights/components/ManagementApi</ApplicationInsightsResourceId>
     <ApplicationInsightsAnnotationResourceId>/subscriptions/20303730-a123-44cb-9c84-ffe48d61a325/resourcegroups/RG-narato-kdg-stage-DEV/providers/microsoft.insights/components/ManagementApi</ApplicationInsightsAnnotationResourceId>
     <PackageTargetFallback>portable-net45+win8</PackageTargetFallback>
+	<GenerateDocumentationFile>true</GenerateDocumentationFile>
+	<OutputType>Exe</OutputType>
+    <PreserveCompilationContext>true</PreserveCompilationContext>
   </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>bin\Debug\netcoreapp1.1\ManagementApi.xml</DocumentationFile>
-  </PropertyGroup>
+  
+   <Target Name="PrepublishScript" BeforeTargets="PrepareForPublish">
+    <ItemGroup>
+      <DocFile Include="bin\$(Configuration)\$(TargetFramework)\*.xml" />
+    </ItemGroup>
+    <Copy SourceFiles="@(DocFile)" DestinationFolder="$(PublishDir)" SkipUnchangedFiles="false" />
+  </Target>
 
   <ItemGroup>
     <Folder Include="wwwroot\" />

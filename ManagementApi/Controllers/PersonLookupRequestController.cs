@@ -28,19 +28,29 @@ namespace ManagementApi.Controllers
             _userManager = userManager;
         }
 
+        /// <summary>
+        /// Returns users if the picture contains persons that are in the database.
+        /// This endpoint is used by the Hololens
+        /// </summary>
+        ///  <response code="200">succes</response>
         [HttpPost("hololensPersonLookup")]
         public async Task<IActionResult> DetectPersonOnPicture(UserImageDto userImage)
         {
-            //terug verplaatsen naar userController en data zelf deserializen
-                return await _responseFactory.CreatePostResponseAsync(async () => await _userManager.findPersons(userImage), this.GetRequestUri());
+                return await _responseFactory.CreatePostResponseAsync(async ()
+                    => await _userManager.findPersons(userImage), this.GetRequestUri());
       
         }
 
-
+        /// <summary>
+        /// Returns users if the picture contains persons that are in the database.
+        /// This endpoint is used by the webapplication
+        /// </summary>
+        ///  <response code="200">succes</response>
         [HttpPost("personLookup")]
         public async Task<IActionResult> DetectPersonOnPicture([FromBody]UserImageDto userImage, bool trimJSImageString = false)
         {
-            return await _responseFactory.CreatePostResponseAsync(async () => await _userManager.findPersons(userImage, trimJSImageString), this.GetRequestUri());
+            return await _responseFactory.CreatePostResponseAsync(async () 
+                => await _userManager.findPersons(userImage, trimJSImageString), this.GetRequestUri());
 
         }
 

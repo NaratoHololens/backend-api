@@ -54,9 +54,7 @@ namespace ManagementApi.Controllers
         /// Creates a new user.
         /// </summary>
         /// <param name="userDto"></param>
-        ///  <response code="204">if a user is deleted successfully</response>
-        /// <response code="401">if not authorized to delete a user</response>
-        /// <response code="404">user with this id doesn't exist</response>
+        ///  <response code="204">if a user is created successfully</response>
         [HttpPost]
         public async Task<IActionResult> Post([FromBody]UserDto userDto)
         {
